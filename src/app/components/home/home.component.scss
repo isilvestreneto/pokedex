@@ -1,0 +1,101 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    .search-input {
+        display: flex;
+        width: 85%;
+        border: 1px solid gray;
+        border-radius: 10px;
+        height: 45px;
+        align-items: center;
+        padding-left: 10px;
+
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        input {
+            margin-left: 10px;
+            border: none;
+            width: 80%;
+            height: 80%;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    }
+
+    .filter-button {
+        border: none;
+        border-radius: 8px;
+    }
+}
+
+.poke-card {
+
+    color: white;
+    padding: 20px 10px;
+    border-radius: 10px;
+    width: 50%;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .type {
+        background-color: hsl(0, 0, 0, 0.5);
+        padding: 3px;
+        border-radius: 5px;
+        margin: 3px;
+    }
+}
+
+.green {
+    background-color: #38BF4B;
+}
+
+.container-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-erro {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        width: 50%;
+        padding: 30px;
+        border: 2px solid black;
+        border-radius: 30px;
+        box-shadow: 1px 1px 5px black;
+
+        a {
+            font-weight: 500;
+            color: yellow;
+        }
+    }
+}

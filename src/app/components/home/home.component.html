@@ -1,0 +1,32 @@
+<div class="container">
+    <form>
+        <div class="search-input">
+            <button (click)="getPokemonData(textoInput)"><i data-feather="search"></i></button>
+            <input type="text" name="pokemon" [(ngModel)]="textoInput" (keyup.enter)="getPokemonData(textoInput)">
+        </div>
+        <button class="filter-button">
+            <i data-feather="filter"></i>
+        </button>
+    </form>
+    <div class="poke-card" *ngIf="pokemon" [ngClass]="types[0].type.name === 'grass' ? 'green' : 'white'">
+        <div id="head" class="row">
+            <p>{{ pokemon?.name.toUpperCase() }}</p>
+            <p>#001</p>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p style="font-weight: bold;">Tipo:</p>
+                <p *ngFor="let type of types" class="type">{{type.type.name.toUpperCase()}}</p>
+            </div>
+            <div class="col">
+                <img [src]="pokemon?.sprites.front_default" alt="Pokemon Image">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-modal" *ngIf="modalErro">
+    <div class="modal-erro">
+        <h4>{{textoErro}} :(</h4>
+        <a (click)="fecharModalErro()">Tente novamente</a>
+    </div>
+</div>
